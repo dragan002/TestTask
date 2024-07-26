@@ -1,0 +1,118 @@
+U prilogu su 2 tesnta zadatka.
+Prvi je mnogo detaljno opisan.
+Drugi je opisan sturo, daje prostor za razmisljanje i slobodu ali govori o tome da osoba vlada tehnologija koje su potrebne za ovaj projekat.
+ 
+Svako dobro
+Testni zadatak 1:
+
+Ovo je cist PHP ili jezik po tvom izboru (preporucljivo PHP): 
+
+ 
+
+Bio jednom jedan skromni developer koji je zeleo da zamjeni svoj stari automobil novim... 
+
+Procenio je da mu stari automobil vriedi 2000 EUR dok je novi kostao citavih 8000 EUR. 
+
+ 
+
+Obzirom da je veoma skroman i uprkos svim izazovima kojima je okruzen zakljucio je da ipak moze da ustedi 1000 EUR mjesecno. All kako to obicno biva, zub vremena nije zaobisao njegov stari ali isto tako ni potencijalno novi automobil tako da im je vrednost svakog mjeseca opadala za 1.5%, sta vise ovaj procenat se uvecavao za 0.5 svakog drugog mjeseca... 
+
+Obzirom da je u pitanju Front end developer i da mu logika i racunica nije bila jaca strana, za njega je ovaj zadatak isuvise komplikovan to je zamolio nekog od buducih back end developera da mu u tome pomogne... 
+
+ 
+
+Da li si ti TAJ koji mu u tome moze pomoci? 
+
+ 
+
+Zadatak je utvrditi koliko je mjeseci potrebno da ustedi kako bi sebi priustio njemacki automobil jer po generalnom stavu je on dobar (za razliku od italijanskih, koji redovno pustaju ulje.,.) i koliko novca ce mu nakon kupovine ostati... 
+
+ 
+
+Funkcija koju treba napraviti sa nazivom nbMonths prima slijedece parametre: 
+
+startPriceOld (integer ili float veci od nule) Pocetna cijena  trenutnog automobila startPriceNew (integer ili float veci od nule) -> Pocetna cena novog automobila savingperMonth (integer ili float veci od nule) -> Ustedjevina svakog mjeseca percentLossByMonth (integer ili float veci od nule) -> Stopa amortizacije 
+
+Tako da imamo primjer: nbMonths(2000, 8000, 1000, 1.5) koji vraca niz [6, 766] gde je prvi element (6) broj mjeseci koliko je potrebno da protekne kako bi sakupio novac, a (766) (zaokruzena vrednost od 766.158) novac koji ce mu ostati nakon kupovine. 
+
+ 
+
+Tako da imamo primjer: nbMonths(2000, 8000, 1000, 1.5) koji vraca niz [6, 766] gde je prvi element (6) broj mjeseci koliko je potrebno da protekne kako bi sakupio novac, a (766) (zaokruzena vrednost od 766.158) novac koji ce mu ostati nakon kupovine. 
+
+Tips: Prodaja, kupovina, ustedjevina se obavljaju na kraju svakog mjeseca ali ako u nekom slucaju vec na pocetku (prvom pozivu funkcije) nas developer ima dovoljno novca, ne treba casiti casa i cekati da prodje prvi mjesec... 
+
+primjer: nbMonths(12000, 8000, 1000, 1.5) vraca niz [0, 4000] nbMonths(8000, 8000, 1000, 1.5) vraca niz [0, 0] 
+
+Svaka slicnost sa stvarnim osobama i dogadjajima je slucajna 🙂 
+
+Jos primjera: nbMonths(2000, 8000, 1000, 1.5) -> [6, 766] nbMonths(12000, 8000, 1000, 1.5) -> [0, 4000] nbMonths(8000, 12000, 500, 1) -> [8, 597] 
+
+ 
+
+ 
+
+Tesni zadatak 2:
+
+ 
+
+Laravel Lucky 6 
+
+ 
+
+Tehnologije:
+
+ 
+
+Laravel, MonogDB, Mysql / MariaDB / Redis / WebSockets.
+
+ 
+
+Zadatak ovog dijela je da napravite testnu aplikaciju. 
+
+Koja korisniku omogucava izbor 6/30 loptica. 
+
+ 
+
+Korisnikov izbor se cuva u drawing tabeli, ili bolje reci kolekciji relizovanoj na MONGODB. 
+
+Klikom na dugme, korisnik svoj izbor od 6 brojeva cuva u tabeli.
+
+ 
+
+Podaci koji su nam neophodni su  brojevi, koriosnik i izvlacemnje.
+
+Izvalcenje krece od 1 i inkremetuje se nakon svakog pozvanog izvlacenja. 
+
+ 
+
+Trenutni broj  izvlacenja se cuva u REDIS-u. 
+
+Brojevi se izvlace potpuno radnom. 
+
+ 
+
+ 
+
+Korisnicki scenario:
+
+ 
+
+Korisnik se loguje na sistem.
+
+Prikazuje mu se interface za izbor loptica (Dovoljno je text polje i coma separated value)
+
+Klikom na dugme, salje podatke i podaci se cuvaju u bazu (MONGO). 
+
+ 
+
+Odlaskom na drugi link, prikazuje se jednostavan interface koji na sebi ima samo jedno dugme.
+
+Koje pokrece izvlacenje i jednu labelu koja govori koje je iduce izvlacenje.
+
+ 
+
+Klikom na drugo dugme, korisnik zahtjeva novo izvlacenje (Increment i izvuceni brojevi se cuvaju u REDISU).
+
+Random izbor brojeva, vracanje broja dobitnih tiketa sa, 4,5,6 pogodatka i vracanje korisinickih imena ili emailova dobitnika izvlacenja 🙂 
+
+Podatke o izvlacenju i dobitnim tiketima, web stranica dobija od strane Web servisa i prikazuje uz pomoc Javascript-a.
